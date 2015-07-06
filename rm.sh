@@ -1,8 +1,7 @@
 #!/bin/bash
-while IFS= read -r line
+while IFS= read -r name
 do 
-hostname=$( echo $line|cut -d' ' -f2)
-docker rm -f $hostname
+docker rm -f $name
 
-done <ip_hostnames
+done <machine_names
 docker rm -f client
