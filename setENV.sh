@@ -1,5 +1,5 @@
 #Proxy
-#export http_proxy="http://10.57.35.31:8080"
+export http_proxy="http://10.57.35.31:8080"
 #HADOOP
 export HADOOP_PREFIX=/usr/local/hadoop
 export HADOOP_COMMON_HOME=/usr/local/hadoop
