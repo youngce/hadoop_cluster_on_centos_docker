@@ -5,8 +5,8 @@
 
 # Options read when launching programs locally with
 # ./bin/run-example or ./bin/spark-submit
-# - HADOOP_CONF_DIR, to point Spark towards Hadoop configuration files
-# - SPARK_LOCAL_IP, to set the IP address Spark binds to on this node
+export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
+export SPARK_LOCAL_IP=127.0.0.1
 # - SPARK_PUBLIC_DNS, to set the public dns name of the driver program
 # - SPARK_CLASSPATH, default classpath entries to append
 
@@ -30,11 +30,11 @@
 
 # Options for the daemons used in the standalone deploy mode
 export SPARK_MASTER_IP=nn
-export SPARK_MASTER_PORT=7777
+export SPARK_MASTER_PORT=7077
 
 # - SPARK_MASTER_OPTS, to set config properties only for the master (e.g. "-Dx=y")
 # - SPARK_WORKER_CORES, to set the number of cores to use on this machine
-# - SPARK_WORKER_MEMORY, to set how much total memory workers have to give executors (e.g. 1000m, 2g)
+export SPARK_WORKER_MEMORY=128m
 # - SPARK_WORKER_PORT / SPARK_WORKER_WEBUI_PORT, to use non-default ports for the worker
 # - SPARK_WORKER_INSTANCES, to set the number of worker processes per node
 # - SPARK_WORKER_DIR, to set the working directory of worker processes

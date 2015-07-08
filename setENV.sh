@@ -4,7 +4,7 @@ export http_proxy="http://10.57.35.31:8080"
 export HADOOP_VERSION=2.6.0
 export HADOOP_HOME=/usr/local/hadoop$HADOOP_VERSION 
 #JAVA
-export JAVA_VERSION=1.8.0_40
+export JAVA_VERSION=1.8.0_45
 export JAVA_HOME="/usr/java/jdk$JAVA_VERSION"
 #SPARK
 export SPARK_VERSION=1.4.0
