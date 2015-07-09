@@ -14,12 +14,12 @@ RUN rpm -ivh /var/tmp/java.rpm
 # HADOOP
 ENV HADOOP_VERSION 2.6.0
 ENV HADOOP_PKG_NAME hadoop-$HADOOP_VERSION
-ENV HADOOP_HOME /usr/local/hadoop$HADOOP_VERSION
+ENV HADOOP_HOME /usr/local/hadoop
 RUN wget http://www.eu.apache.org/dist/hadoop/common/$HADOOP_PKG_NAME/$HADOOP_PKG_NAME.tar.gz && tar xvzf $HADOOP_PKG_NAME.tar.gz && rm -f $HADOOP_PKG_NAME.tar.gz && mv $HADOOP_PKG_NAME $HADOOP_HOME
 #SPARK
 ENV SPARK_VERSION 1.4.0
 ENV SPARK_PKG_NAME spark-$SPARK_VERSION-bin-hadoop2.6
-ENV SPARK_HOME /usr/local/spark$SPARK_VERSION
+ENV SPARK_HOME /usr/local/spark
 RUN wget http://d3kbcqa49mib13.cloudfront.net/$SPARK_PKG_NAME.tgz && tar zxvf $SPARK_PKG_NAME.tgz && rm -rf $SPARK_PKG_NAME.tgz && mv $SPARK_PKG_NAME $SPARK_HOME
 
 ######
@@ -47,7 +47,7 @@ ADD conf/hadoop/masters     	    $HADOOP_HOME/etc/hadoop/masters
 ADD conf/hadoop_spark_slaves	$SPARK_HOME/conf/slaves
 ADD conf/spark/spark-env.sh	$SPARK_HOME/conf/spark-env.sh
 ADD conf/spark/log4j.properties $SPARK_HOME/conf/log4j.properties
-
+ADD conf/spark/spark-defaults.conf $SPARK_HOME/conf/spark-defaults.conf
 #GLOBLE ENV
 ADD setENV.sh      /etc/profile.d/setENV.sh
 CMD ["/usr/sbin/sshd", "-D"]

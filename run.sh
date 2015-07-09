@@ -7,7 +7,7 @@ image=$1
 create_containers_from(){
  while IFS= read -r name
 do
-docker run -d --name="$name" --hostname="$name" $image
+docker run -d -m 256m --name="$name" --hostname="$name" $image
 done <$1
 sh showHosts.sh $1 >> hosts_cmds/hosts
 
@@ -18,4 +18,4 @@ create_containers_from conf/hadoop_spark_slaves
 create_containers_from conf/hadoop/masters
 
 wd=`pwd`
-docker run -it -v $wd/data:/root/data -v $wd/hosts_cmds:/root/hosts_cmds --name=client --hostname=client $image /bin/bash
+docker run -it -m 256m -v $wd/data:/root/data -v $wd/hosts_cmds:/root/hosts_cmds --name=client --hostname=client $image /bin/bash

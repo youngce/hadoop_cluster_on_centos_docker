@@ -22,12 +22,12 @@
        <value>1</value>
      </property>
 	 <property>
-	   <name>dfs.name.dir</name>
-	   <value>/name/</value>
+	   <name>dfs.namenode.name.dir</name>
+	   <value>file:/usr/local/hadoop/namenode.dir/</value>
 	 </property>
 
 	 <property>
-	   <name>dfs.data.dir</name>
-	   <value>/data/</value>
+	   <name>dfs.datanode.data.dir</name>
+	   <value>file:/usr/local/hadoop/datanode.dir/</value>
 	 </property>
 </configuration>
