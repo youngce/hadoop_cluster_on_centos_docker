@@ -6,7 +6,7 @@
 # Options read when launching programs locally with
 # ./bin/run-example or ./bin/spark-submit
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
-export SPARK_LOCAL_IP=127.0.0.1
+#export SPARK_LOCAL_IP=127.0.0.1
 # - SPARK_PUBLIC_DNS, to set the public dns name of the driver program
 # - SPARK_CLASSPATH, default classpath entries to append
 
@@ -29,12 +29,12 @@ export SPARK_LOCAL_IP=127.0.0.1
 # - SPARK_YARN_DIST_ARCHIVES, Comma separated list of archives to be distributed with the job.
 
 # Options for the daemons used in the standalone deploy mode
-export SPARK_MASTER_IP=nn
+export SPARK_MASTER_IP=client
 export SPARK_MASTER_PORT=7077
 
 # - SPARK_MASTER_OPTS, to set config properties only for the master (e.g. "-Dx=y")
-# - SPARK_WORKER_CORES, to set the number of cores to use on this machine
-export SPARK_WORKER_MEMORY=256m
+export SPARK_WORKER_CORES=1
+export SPARK_WORKER_MEMORY=512m
 # - SPARK_WORKER_PORT / SPARK_WORKER_WEBUI_PORT, to use non-default ports for the worker
 # - SPARK_WORKER_INSTANCES, to set the number of worker processes per node
 # - SPARK_WORKER_DIR, to set the working directory of worker processes
@@ -42,7 +42,7 @@ export SPARK_WORKER_MEMORY=256m
 # - SPARK_HISTORY_OPTS, to set config properties only for the history server (e.g. "-Dx=y")
 # - SPARK_SHUFFLE_OPTS, to set config properties only for the external shuffle service (e.g. "-Dx=y")
 # - SPARK_DAEMON_JAVA_OPTS, to set config properties for all daemons (e.g. "-Dx=y")
-export SPARK_DAEMON_MEMORY=256m
+export SPARK_DAEMON_MEMORY=512m
 # - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
 # Generic options for the daemons used in the standalone deploy mode
 # - SPARK_CONF_DIR      Alternate conf dir. (Default: ${SPARK_HOME}/conf)
