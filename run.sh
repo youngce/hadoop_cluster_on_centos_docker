@@ -18,4 +18,4 @@ create_containers_from conf/hadoop_spark_slaves
 create_containers_from conf/hadoop/masters
 
 wd=`pwd`
-docker run -it -m 1g -v $wd/data:/root/data -v $wd/scripts:/root/scripts -p 8080:8080 --name=client --hostname=client $image /bin/bash
+docker run -it -m 1g -v $wd/data:/root/data -v $wd/scripts:/root/scripts -p 8080:8080 -p 7077:7077 --name=client --hostname=client $image /bin/bash
