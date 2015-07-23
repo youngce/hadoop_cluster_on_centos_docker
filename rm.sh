@@ -9,4 +9,4 @@ done <$1
 
 rm_containers_from conf/hadoop_spark_slaves
 rm_containers_from conf/hadoop/masters
-docker rm -f client
+docker rm -f master zk1 client

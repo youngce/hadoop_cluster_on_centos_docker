@@ -29,7 +29,7 @@ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 # - SPARK_YARN_DIST_ARCHIVES, Comma separated list of archives to be distributed with the job.
 
 # Options for the daemons used in the standalone deploy mode
-export SPARK_MASTER_IP=client
+#export SPARK_MASTER_IP=client
 export SPARK_MASTER_PORT=7077
 
 # - SPARK_MASTER_OPTS, to set config properties only for the master (e.g. "-Dx=y")
@@ -41,7 +41,7 @@ export SPARK_WORKER_MEMORY=512m
 # - SPARK_WORKER_OPTS, to set config properties only for the worker (e.g. "-Dx=y")
 # - SPARK_HISTORY_OPTS, to set config properties only for the history server (e.g. "-Dx=y")
 # - SPARK_SHUFFLE_OPTS, to set config properties only for the external shuffle service (e.g. "-Dx=y")
-# - SPARK_DAEMON_JAVA_OPTS, to set config properties for all daemons (e.g. "-Dx=y")
+export SPARK_DAEMON_JAVA_OPTS="-Dspark.deploy.recoveryMode=ZOOKEEPER -Dspark.deploy.zookeeper.url=zk1:2181 -Dspark.deploy.zookeeper.dir=/spark"
 export SPARK_DAEMON_MEMORY=512m
 # - SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
 # Generic options for the daemons used in the standalone deploy mode
